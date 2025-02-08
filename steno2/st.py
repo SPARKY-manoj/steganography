@@ -15,7 +15,6 @@ def index():
 @app.route('/encrypt',methods=['POST'])
 def encrypt():
 
-	#img = cv2.imread("/home/manoj/Desktop/steno2/static/images.jpeg") # Replace with the correct image path
 
 	msg = request.form['msg']
 	password = request.form['pas']
@@ -34,7 +33,7 @@ def encrypt():
 	m = 0
 	n = 0
 	z = 0
-	print("#######",c)
+	
 
 	for i in range(len(msg)):
 	    img[n, m, z] = d[msg[i]]
@@ -43,8 +42,8 @@ def encrypt():
 	    z = (z + 1) % 3
 
 	cv2.imwrite("static/encryptedImage.jpg", img)
-	os.system("start encryptedImage.jpg")  # Use 'start' to open the image on Windows
-	#c_json=json.dumps(c)
+	os.system("start encryptedImage.jpg") 
+	
 
 	return render_template("result.html",image=url_for('static',filename='encryptedImage.jpg'),msg=msg,psw=password)
 
@@ -55,16 +54,13 @@ def decrypt():
 	ep=request.form['password']
 	pp=request.form['stored_password']
 	message=""
-	#c_json=request.form['c_json']
-	#cc=json.loads(c_json)
 	n=0
 	m=0
 	z=0
 	global c
 	with open("mapping.json","r") as f:
 		c=json.load(f)
-	print("@@@@",c)
-	#ccc=session.get('c',None)
+	
 	if c is None:
 		return "no data found"
 	img=cv2.imread("static/encryptedImage.jpg")
@@ -76,8 +72,8 @@ def decrypt():
 			z=(z+1)%3
 	else:
 		print("not authorized")
-	print(message,ms,"$$$$$")	
-	return render_template("message.html",message=ms)
+	
+	return render_template("message.html",ms)
 		
 
 if __name__ == "__main__":
