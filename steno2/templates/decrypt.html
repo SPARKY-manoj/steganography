@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Steganography Decryption</title>
+</head>
+<body>
+    <h3>Encrypted Image Saved!</h3>
+    <p><strong>Image:</strong></p>
+    <img src="static/encryptedImage.jpg" alt="Encrypted Image" width="300"><br>
+
+    <h3>Enter Password to Decrypt</h3>
+    <form action="/decrypt" method="post">
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <input type="hidden" name="hidden_pas" value="{{ request.form['pas'] }}">
+        <input type="submit" value="Decrypt">
+    </form>
+</body>
+</html>

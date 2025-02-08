@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encryption Result</title>
+</head>
+<body>
+    <h3>Encryption Successful!</h3>
+    <p><strong>Encrypted Image:</strong></p>
+    <img src="{{ url_for('static', filename='encryptedImage.jpg') }}" alt="Encrypted Image">
+    <form action="/decrypt" method="post">
+	<label>enter the password</label><br>
+	<input type="password" name="password" required><br>
+	<input type="hidden" name="stored_msg" value="{{ msg  }}">
+	<input type="hidden" id="c_json" name="c_json" value="{{ c_json }}">
+	<input type="hidden" name="stored_password" value="{{ password }}">
+	<input type="submit" value="Decrypt">
+    </form>
+</body>
+</html>
