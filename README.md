@@ -1,5 +1,7 @@
 # Stenograph
 **Encrypts a text in an image**
+Folder 1 : GUI interface
+Folder 2 : CLI interface
 
 ## Overview
 Stenograph is a tool that allows you to hide a secret message within an image. It utilizes steganography techniques to embed text within the pixels of an image, providing a layer of security and privacy.
