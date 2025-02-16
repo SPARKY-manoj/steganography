@@ -1,6 +1,6 @@
 # Stenograph
 **Encrypts a text in an image** <br>
-Folder 1 : GUI interface
+Folder 1 : GUI interface <br>
 Folder 2 : CLI interface
 
 ## Overview
