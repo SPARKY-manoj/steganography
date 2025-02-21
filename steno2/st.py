@@ -63,7 +63,7 @@ def decrypt():
 	global c
 	with open("mapping.json","r") as f:
 		c=json.load(f)
-	print("@@@@",c)
+	
 	#ccc=session.get('c',None)
 	if c is None:
 		return "no data found"
