@@ -34,7 +34,7 @@ def encrypt():
 	m = 0
 	n = 0
 	z = 0
-	print("#######",c)
+	
 
 	for i in range(len(msg)):
 	    img[n, m, z] = d[msg[i]]
@@ -76,7 +76,7 @@ def decrypt():
 			z=(z+1)%3
 	else:
 		print("not authorized")
-	print(message,ms,"$$$$$")	
+	
 	return render_template("message.html",message=ms)
 		
 
